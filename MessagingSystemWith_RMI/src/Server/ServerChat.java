@@ -1,0 +1,11 @@
+package Server;
+
+public class ServerChat implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

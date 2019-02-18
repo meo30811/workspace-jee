@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/ueb6_2RMI_Bericht_Call_by_Reference/src/de/client/Uniklinik_Regensburg.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="de.client.Uniklinik_Regensburg"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ueb6_2RMI_Bericht_Call_by_Reference"/>
+</launchConfiguration>

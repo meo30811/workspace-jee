@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Task&apos; to &apos;Auto&apos;&#x0D;&#x0A;- Original project: &apos;Executorservice&apos;&#x0D;&#x0A;- Original element: &apos;Task&apos;&#x0D;&#x0A;- Renamed element: &apos;Auto&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Task&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Task.java[Task" matchStrategy="1" name="Auto" qualified="false" references="true" similarDeclarations="false" stamp="1540035518714" textual="false" version="1.0"/>
+</session>

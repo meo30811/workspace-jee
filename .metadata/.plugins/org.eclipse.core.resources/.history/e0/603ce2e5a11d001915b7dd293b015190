@@ -1,0 +1,94 @@
+package Server;
+
+import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.net.*;
+import java.io.*;
+
+public class MainServer implements Runnable {
+
+		// TODO Auto-generated method stub
+	private Socket client;
+
+	public MainServer(Socket client) 
+	{
+		this.client = client;
+	}
+     
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try
+		{
+		   PrintWriter writer = new PrintWriter(client.getOutputStream(),true);
+	      BufferedReader reader = new BufferedReader(new InputStreamReader(client.getInputStream()));
+
+	      writer.println("i am crazy davinci. Nice you made it so far.");
+	      writer.println("please tell me your name: ");
+	      writer.flush();
+
+	      String message = reader.readLine();
+
+	      writer.println("Welcome "+message+".It's a pleasure talking to you.");
+	      writer.println("I'm going	to respond	to	every text you	send and I'll send a ping from time	to time.");
+	      writer.println("You can end by sending the word 'Bye' or by closing the socket.");
+	      writer.println("I	will close the	socket	after 2	minutes");
+	      writer.println(Calendar.getInstance().getTime());
+	      writer.flush();
+	      client.setSoTimeout(180000);
+	      
+	      ExecutorService executor = Executors.newCachedThreadPool();
+	      String getMessage = null;
+
+	      do
+	      {
+	    	  Future<String> future = executor.submit(new InputStreamListenerWaiting(reader));
+	          try {
+
+					getMessage = future.get(1,TimeUnit.SECONDS);
+				    System.out.println(getMessage);
+					writer.println(getMessage);
+					writer.flush();
+
+
+			} catch (TimeoutException e) {
+				// TODO Auto-generated catch block
+				//e.printStackTrace();
+				if(getMessage!=null)
+				{
+				getMessage= "it is now "+Calendar.getInstance().getTime();
+				writer.println(getMessage);
+				writer.flush();
+				}
+			}catch(ExecutionException e)
+	        {
+
+	         }catch(InterruptedException e)
+	          {
+	        	 e.printStackTrace();
+	          }finally
+	          {
+	        	  if(getMessage.equalsIgnoreCase("bye"))
+	        	  {
+	        		  writer.println("you have close the Socket good bye! ");
+	        		  writer.flush();
+	        	  }
+	          }
+	      }while(getMessage!=null && !getMessage.equalsIgnoreCase("bye"));
+	}catch(IOException e)
+		{
+		try {
+			throw new IOException("");
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
+	
+	}
+}

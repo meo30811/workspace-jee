@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ParticipantNotAllowedException&apos; to &apos;ParticipationNotAllowedException&apos;&#x0D;&#x0A;- Original project: &apos;PG2Exception&apos;&#x0D;&#x0A;- Original element: &apos;ParticipantNotAllowedException&apos;&#x0D;&#x0A;- Renamed element: &apos;ParticipationNotAllowedException&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ParticipantNotAllowedException&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{ParticipantNotAllowedException.java[ParticipantNotAllowedException" matchStrategy="1" name="ParticipationNotAllowedException" qualified="false" references="true" similarDeclarations="false" stamp="1527866393050" textual="false" version="1.0"/>
+</session>

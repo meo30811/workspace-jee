@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Browser_Download&apos; to &apos;Browser_Download_loesung&apos;" description="Rename resource &apos;Browser_Download&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Browser_Download" name="Browser_Download_loesung" stamp="1542975834635" updateReferences="true"/>
+</session>
